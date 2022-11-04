@@ -6,6 +6,8 @@ from ads.serializers import AdSerializer, AdDetailSerializer, CommentSerializer
 from ads.permissions import IsAdmin, IsOwner
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.generics import get_object_or_404
+from django_filters.rest_framework import DjangoFilterBackend
+from ads.filters import AdFilter
 
 
 class AdPagination(pagination.PageNumberPagination):
@@ -19,6 +21,8 @@ class AdViewSet(viewsets.ModelViewSet):
     serializer_class = AdSerializer
     pagination_class = AdPagination
     permission_classes = (AllowAny,)
+    filter_backends = (DjangoFilterBackend, )
+    filterset_class = AdFilter
 
     def perform_create(self, serializer: AdSerializer):
         user = self.request.user
