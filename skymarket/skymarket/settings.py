@@ -121,7 +121,9 @@ DATABASES = {
         "NAME": "skymarket",
         "USER": "skymarket",
         "PASSWORD": "skymarket",
-        "HOST": "172.22.0.1",
+        "HOST": "localhost",
+#        "HOST": "172.22.0.1" #Докер ip сети market_postgres_default
+                              #"Gateway"
         "PORT": "5432",
     }
 

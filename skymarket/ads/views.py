@@ -1,6 +1,6 @@
 from rest_framework import pagination, viewsets
 from rest_framework.decorators import action
-from rest_framework.request import Request
+
 from ads.models import Ad, Comment
 from ads.serializers import AdSerializer, AdDetailSerializer, CommentSerializer
 from ads.permissions import IsAdmin, IsOwner
